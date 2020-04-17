@@ -5,7 +5,7 @@ function fun()
 
   //let p = document.getElementsByClassName("_1qeIAgB0cPwnLhDF9XSiJM");
   let p = document.getElementsByClassName("_3sf33-9rVAO_v4y0pIW_CH ");
-  let y = p[1].getElementsByClassName("_2mHuuvyV9doV3zwbZPtIPG");
+  //let y = p[1].getElementsByClassName("_2mHuuvyV9doV3zwbZPtIPG");
   
   //console.log("yi");
   let url =document.URL;
