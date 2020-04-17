@@ -1,7 +1,7 @@
-
+let arr=["og"];
 function fun()
 {
-  console.log("start");
+  console.log(arr);
 
   //let p = document.getElementsByClassName("_1qeIAgB0cPwnLhDF9XSiJM");
   let p = document.getElementsByClassName("_3sf33-9rVAO_v4y0pIW_CH ");
@@ -64,7 +64,11 @@ function fun()
       x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1RIl585IYPW6cmNXwgRz0J").innerText;
       arg.level=x;
       arg.subreddit=subr;
-      
+      if(arr.includes(arg.text))
+      {
+        continue;
+      }
+      arr.push(arg.text);
       
       
       
