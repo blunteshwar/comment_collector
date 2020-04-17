@@ -29,9 +29,26 @@ function fun()
       let check = div.querySelector(".Comment");
       if(check==null)
         continue;
-      let z=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt");
-      let x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt").querySelector("._2mHuuvyV9doV3zwbZPtIPG").querySelector("a").innerText;
+      //let x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt").querySelector("._2mHuuvyV9doV3zwbZPtIPG").querySelector("a").innerText;
+      let x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu")
+      if(x==null)
+        continue;
+      x=x.querySelector("._3tw__eCCe7j-epNCKGXUKk ");
+      if(x==null)
+        continue;
+      x=x.querySelector("._1S45SPAIb30fsXtEcKPSdt");
+      if(x==null)
+        continue;
+      x=x.querySelector("._2mHuuvyV9doV3zwbZPtIPG");
+      if(x==null)
+        continue;
+      x=x.querySelector("a");
+      if(x==null)
+        continue;
+      x=x.innerText;
       arg.username=x;
+      let z=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt");
+      
       //arg["username"]=x;
       x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt").querySelector("._2ETuFsVzMBxiHia6HfJCTQ").innerText;
       x=x.split(" ");
@@ -47,15 +64,30 @@ function fun()
       x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1RIl585IYPW6cmNXwgRz0J").innerText;
       arg.level=x;
       arg.subreddit=subr;
-
+      
+      
+      
+      
+      
+      
+      const para = document.createElement('p');
+      para.textContent = '  !';
 
       var data = JSON.stringify(arg);
       var xhr = new XMLHttpRequest();
       xhr.withCredentials = true;
 
       xhr.addEventListener("readystatechange", function() {
-      if(this.readyState === 4) {
-      //console.log(this.responseText);
+      if(this.readyState === 4) 
+      {
+        console.log(this.responseText);
+        let res=JSON.parse(this.responseText);
+        //console.log(res["label"]);
+        if(res["label"]!="clean")
+        {
+          console.log("yes");
+          z.appendChild(para);
+        }
       }
       });
 
@@ -66,19 +98,12 @@ function fun()
       xhr.send(data);
       
 
-      //console.log(JSON.stringify(arg));
-      console.log(xhr.responseText);
-      const para = document.createElement('p');
-      para.textContent = '  !';
+      console.log(arg);
+      
+      
       //z.appendChild(para);
       //console.log(typeof(xhr.responseText));
-      let res=JSON.parse(xhr.responseText);
-      console.log(res["label"]);
-      if(res["label"]!="clean")
-      {
-        console.log("yes");
-        z.appendChild(para);
-      }
+      
 
       
   }
