@@ -1,9 +1,10 @@
 {
     "manifest_version": 2,
-    "name": "post collector",
+    "name": "Reddit Hate Finder",
+    "description": "Extension to detect and label instances of hate speech in Reddit comments.",
     "browser_action": {
-        "default_icon": "active.png", 
-        "popup": "shopcmp.htm"  
+        "default_icon": "active.png",
+        "popup": "shopcmp.htm"
       },
     "version": "1.2",
     "permissions": [
@@ -15,5 +16,5 @@
             "js": ["content.js"]
         }
     ]
-    
+
 }
