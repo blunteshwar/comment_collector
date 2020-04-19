@@ -74,9 +74,10 @@ function fun()
       
       
       
-      const para = document.createElement('p');
-      para.textContent = '  !';
-      para.style.cssText = "color: red; font-size: 30px";
+      let para = new Image();
+      para.src='./insult.png';
+      //para.textContent = '  !';
+      //para.style.cssText = "color: red; font-size: 30px";
 
       var data = JSON.stringify(arg);
       var xhr = new XMLHttpRequest();
