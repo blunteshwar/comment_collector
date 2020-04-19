@@ -1,5 +1,5 @@
 let arr=["og"];
-chrome.browserAction.setIcon({path:"https://i.ibb.co/JBRmdc2/active.png"});
+
 function fun()
 {
   //console.log(arr);

@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "post collector",
     "browser_action": {
-        "default_icon": "passive.png", 
+        "default_icon": "active.png", 
         "popup": "shopcmp.htm"  
       },
     "version": "1.2",
