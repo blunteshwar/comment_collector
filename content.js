@@ -1,7 +1,8 @@
 let arr=["og"];
+chrome.browserAction.setIcon({path:"https://i.ibb.co/JBRmdc2/active.png"});
 function fun()
 {
-  console.log(arr);
+  //console.log(arr);
 
   //let p = document.getElementsByClassName("_1qeIAgB0cPwnLhDF9XSiJM");
   let p = document.getElementsByClassName("_3sf33-9rVAO_v4y0pIW_CH ");
@@ -70,14 +71,22 @@ function fun()
       }
       arr.push(arg.text);
       
+      let toxic='https://i.ibb.co/vVRCMSL/toxic.png';
+      let threat='https://i.ibb.co/56ksD3t/threat.png';
+      let severe_toxic='https://i.ibb.co/MCZfVjv/severe-toxic.png';
+      let obscene='https://i.ibb.co/PMG3kW1/obscene.png';
+      let identity_hate='https://i.ibb.co/b1TN5cD/identity-hate.png';
+      let insult='https://i.ibb.co/ncV2BJK/insult.png';
       
       
-      
-      
-      let para = new Image();
-      para.src='./insult.png';
+      let faltu=document.createElement("p");
+      faltu.textContent="qw";
+      faltu.style.cssText="color : #80000000";
+      //let para = new Image();
+     // para.src='https://i.ibb.co/vVRCMSL/toxic.png';
       //para.textContent = '  !';
-      //para.style.cssText = "color: red; font-size: 30px";
+      //para.style.width='9%';
+      
 
       var data = JSON.stringify(arg);
       var xhr = new XMLHttpRequest();
@@ -87,11 +96,36 @@ function fun()
       if(this.readyState === 4) 
       {
         console.log(this.responseText);
+        
         let res=JSON.parse(this.responseText);
-        //console.log(res["label"]);
+        
         if(res["label"]!="clean")
         {
-          console.log("yes");
+
+          //console.log(arg);
+          z.appendChild(faltu);
+          let para = new Image();
+          let sc;
+          switch(res["label"])
+          {
+            case "toxic":
+              sc=toxic;break;
+            case "threat":
+              sc=threat;break;
+            case "obscene":
+              sc=obscene;break;
+            case "severe_toxic":
+              sc=severe_toxic;break;
+            case "identity_hate":
+              sc=identity_hate;break;
+            case "insult":
+              sc=insult;break;
+
+
+          }
+          para.src=sc;
+          para.style.width='9%';
+
           z.appendChild(para);
         }
       }
@@ -104,7 +138,7 @@ function fun()
       xhr.send(data);
       
 
-      console.log(arg);
+      //console.log(arg);
       
       
       //z.appendChild(para);
