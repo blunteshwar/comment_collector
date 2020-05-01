@@ -51,7 +51,10 @@ function fun()
       let z=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt");
       
       //arg["username"]=x;
-      x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt").querySelector("._2ETuFsVzMBxiHia6HfJCTQ").innerText;
+      x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._1S45SPAIb30fsXtEcKPSdt").querySelector("._2ETuFsVzMBxiHia6HfJCTQ");
+      if(x==null)
+        continue;
+      x=x.innerText;
       x=x.split(" ");
       arg.points=x[0];
       x=div.querySelector(".P8SGAKMtRxNwlmLz1zdJu").querySelector("._3tw__eCCe7j-epNCKGXUKk ").querySelector("._3cjCphgls6DH-irkVaA0GM").querySelector("._292iotee39Lmt0MkQZ2hPV").querySelectorAll("p");
